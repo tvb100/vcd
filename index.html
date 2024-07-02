@@ -1,37 +1,37 @@
-          &它; !甲基四氯环己烷 和超光速;
-HTML朗格="恩";
-电话和电话电报;
-             < 梅塔 查理特 = "UTF-8"        >
-           < 梅塔 姓名 = "viewport"       满意的 = "width=device-width, initial-scale=1.0"     >
-    云斑工作者的数据 和; / 和技术;
-    风格 和技术;
-        机构{
-            家庭家庭:阿丽亚尔、沙沙;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Data from Cloudflare Workers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
         }
         #dataDisplay {
             white-space: pre-wrap; /* 保持 JSON 格式 */
             background-color: #f4f4f4;
             padding: 10px;
-            边界:1px固体#DDD;
+            border: 1px solid #ddd;
         }
-        </ 风格 >
-   </ 头>
-和; 车身 和技术;
-    来自云斑工作者的数据 和; /h1 和技术;
-    按钮ID="显示数据" &获取数据</按钮&t;
-       < 前的 身份证 = "dataDisplay"  > 来自 Cloudflare Workers 的 JSON 数据 </ 前的 >
+    </style>
+</head>
+<body>
+    <h1>JSON Data from Cloudflare Workers</h1>
+    <button id="fetchData">Fetch Data</button>
+    <pre id="dataDisplay">来自 Cloudflare Workers 的 JSON 数据</pre>
 
-    脚本 和技术;
+    <script>
         document.getElementById('fetchData').addEventListener('click', () => {
-            fetch ( 'https://vod.nsee1.us.kg/' )
+            fetch('https://vod.nsee1.us.kg/')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('dataDisplay').textContent = JSON.stringify(data, null, 2);
                 })
                 .catch(error => {
-                    错误。错误("数据获取错误:",错误);
+                    console.error('Error fetching data:', error);
                 });
         });
-        </ 剧本 >
-   </ 身体>
-   </ Html>
+    </script>
+</body>
+</html>
