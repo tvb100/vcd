@@ -1,0 +1,37 @@
+&它;!文档型HTML&TL;
+HTML朗格="恩";
+电话和电话电报;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    云斑工作者的数据&l;/&t;
+    风格&t;
+        机构{
+            家庭家庭:阿丽亚尔、沙沙;
+        }
+        #dataDisplay {
+            white-space: pre-wrap; /* 保持 JSON 格式 */
+            background-color: #f4f4f4;
+            padding: 10px;
+            边界:1px固体#DDD;
+        }
+    </style>
+</head>
+&l;车身&t;
+    来自云斑工作者的数据&l;/h1&t;
+    按钮ID="显示数据"&获取数据</按钮&t;
+    <pre id="dataDisplay">来自 Cloudflare Workers 的 JSON 数据</pre>
+
+    脚本&t;
+        document.getElementById('fetchData').addEventListener('click', () => {
+            fetch('https://<your-worker-subdomain>.workers.dev')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('dataDisplay').textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    错误。错误("数据获取错误:",错误);
+                });
+        });
+    </script>
+</body>
+</html>
